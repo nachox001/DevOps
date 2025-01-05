@@ -1,1 +1,14 @@
+[firewall]
+192.168.56.2
 
+[SIEM server]
+192.168.56.7
+
+[IDS/IPS servers]
+192.168.56.6
+
+[Windows Client PC]
+192.168.56.103
+
+[Kali Linux Server]
+192.168.56.100
