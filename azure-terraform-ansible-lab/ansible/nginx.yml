@@ -1,0 +1,28 @@
+---
+- name: Configure Azure web server
+  hosts: azurevm
+  become: true
+
+  tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+
+    - name: Install Nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    - name: Ensure Nginx is running and enabled
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
+
+    - name: Deploy interview lab homepage
+      ansible.builtin.copy:
+        content: |
+          Terraform provisioned this Azure VM.
+          Ansible configured this web server.
+        dest: /var/www/html/index.html
+        mode: "0644"
