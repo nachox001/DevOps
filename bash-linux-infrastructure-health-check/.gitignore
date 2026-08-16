@@ -1,0 +1,11 @@
+# Generated health reports
+health-report.txt
+health-report-*.txt
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Editor/OS files
+.vscode/
+.DS_Store
