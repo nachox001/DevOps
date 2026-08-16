@@ -1,0 +1,15 @@
+# Generated health-check output
+health-report.json
+health-report-*.json
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# Editor/OS files
+.vscode/
+.DS_Store
