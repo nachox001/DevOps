@@ -1,0 +1,12 @@
+# Generated health-check reports
+health-report.txt
+health-report-*.txt
+
+# PowerShell temporary/local files
+*.tmp
+*.log
+
+# Editor/OS files
+.vscode/
+.DS_Store
+Thumbs.db
