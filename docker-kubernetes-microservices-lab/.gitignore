@@ -1,0 +1,16 @@
+# Local/generated files
+*.log
+*.tmp
+
+# Kubernetes local config/secrets
+.kube/
+*.kubeconfig
+
+# Environment files
+.env
+.env.*
+
+# Editor/OS files
+.vscode/
+.DS_Store
+Thumbs.db
