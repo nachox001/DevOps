@@ -209,7 +209,7 @@ http://<LAB_VM_IP>:8083/api
 
 `kubectl port-forward` is intended for development and troubleshooting; production workloads would normally use an appropriate Service type and/or Ingress.
 
-## Key interview concepts
+## Key learning concepts
 
 **Docker image vs container:** an image is the packaged template; a container is an instance created from that image.
 
@@ -225,6 +225,3 @@ http://<LAB_VM_IP>:8083/api
 
 **ConfigMap:** separates non-secret configuration from the container image and injects it into Pods.
 
-## Notes
-
-This is an interview-focused learning lab rather than a production Kubernetes design. Production environments would normally add readiness/liveness probes, resource requests/limits, secrets management, Ingress or cloud load balancing, TLS, observability and appropriate security policies.
