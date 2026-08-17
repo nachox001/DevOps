@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-nginx
+data:
+  default.conf: |
+    server {
+        listen 80;
+        listen [::]:80;
+
+        location / {
+            default_type text/html;
+            return 200 '<h1>David Kubernetes Microservices Lab</h1><p>Frontend service is running.</p><p><a href="/api">Backend API</a></p>';
+        }
+
+        location /api {
+            proxy_pass http://backend;
+        }
+    }
