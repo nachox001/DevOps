@@ -208,23 +208,3 @@ http://<LAB_VM_IP>:8083/api
 ```
 
 `kubectl port-forward` is intended for development and troubleshooting; production workloads would normally use an appropriate Service type and/or Ingress.
-
-## Key interview concepts
-
-**Docker image vs container:** an image is the packaged template; a container is an instance created from that image.
-
-**Docker vs Compose:** Docker manages individual containers; Compose declaratively manages a related multi-container application.
-
-**Deployment:** declares the desired state for an application workload and manages ReplicaSets/Pods.
-
-**Service:** provides a stable endpoint and service discovery for ephemeral Pods.
-
-**Scaling:** replicas can increase or decrease independently for different microservices.
-
-**Self-healing:** Kubernetes continuously reconciles actual state with desired state.
-
-**ConfigMap:** separates non-secret configuration from the container image and injects it into Pods.
-
-## Notes
-
-This is an interview-focused learning lab rather than a production Kubernetes design. Production environments would normally add readiness/liveness probes, resource requests/limits, secrets management, Ingress or cloud load balancing, TLS, observability and appropriate security policies.
