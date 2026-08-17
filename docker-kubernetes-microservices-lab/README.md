@@ -208,3 +208,7 @@ http://<LAB_VM_IP>:8083/api
 ```
 
 `kubectl port-forward` is intended for development and troubleshooting; production workloads would normally use an appropriate Service type and/or Ingress.
+
+## Notes
+
+This is a learning lab rather than a production Kubernetes design. Production environments would normally add readiness/liveness probes, resource requests/limits, secrets management, Ingress or cloud load balancing, TLS, observability and appropriate security policies.
