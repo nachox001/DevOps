@@ -38,13 +38,17 @@ jobs:
             -t cloud-ci-test:latest \
             ./docker-kubernetes-microservices-lab/docker
 
+      - name: Install kubeconform
+        run: |
+          curl -L -o kubeconform.tar.gz \
+            https://github.com/yannh/kubeconform/releases/latest/download/kubeconform-linux-amd64.tar.gz
+
+          tar -xzf kubeconform.tar.gz
+          sudo mv kubeconform /usr/local/bin/
+
       - name: Validate Kubernetes Manifests
         run: |
-          kubectl apply --dry-run=client --validate=false \
-            -f ./docker-kubernetes-microservices-lab/kubernetes/backend.yaml
-
-          kubectl apply --dry-run=client --validate=false \
-            -f ./docker-kubernetes-microservices-lab/kubernetes/frontend-configmap.yaml
-
-          kubectl apply --dry-run=client --validate=false \
-            -f ./docker-kubernetes-microservices-lab/kubernetes/frontend.yaml
+          kubeconform \
+            -strict \
+            -summary \
+            ./docker-kubernetes-microservices-lab/kubernetes/*.yaml
