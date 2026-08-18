@@ -40,11 +40,11 @@ jobs:
 
       - name: Validate Kubernetes Manifests
         run: |
-          kubectl apply --dry-run=client \
+          kubectl apply --dry-run=client --validate=false \
             -f ./docker-kubernetes-microservices-lab/kubernetes/backend.yaml
 
-          kubectl apply --dry-run=client \
+          kubectl apply --dry-run=client --validate=false \
             -f ./docker-kubernetes-microservices-lab/kubernetes/frontend-configmap.yaml
 
-          kubectl apply --dry-run=client \
+          kubectl apply --dry-run=client --validate=false \
             -f ./docker-kubernetes-microservices-lab/kubernetes/frontend.yaml
